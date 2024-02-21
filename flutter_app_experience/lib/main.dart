@@ -1,25 +1,3 @@
-# SairFlutterLearningPath
-记录2023年10月份开始的flutter学习经历
-
-
-
-学习常用：
-
-工具类：Vscode、Typora、git
-
-网站类：Youtube、bilibili、稀土掘金、github、git
-
-
-
-学习路线：Dart -> Flutter 
-
-
-
-本人将学习时写的代码使用Github进行存储了，由于本人通常以如下在代码中写注释的方式进行学习，所以请看本仓库的**分支**。
-
-> 本分支为: flu01-experience
-
-```dart
 /// flutter初体验 ：通过flutter:New Project 创建了一个Empty Application
 /// 最简单的项目了，了解一下目录结构，声明式语法，基本函数
 
@@ -61,5 +39,37 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-```
 
+
+/*  下面这些都是Scaffold源码中的组件，相信我，你在未来的开发中，会经常用到的
+class Scaffold extends StatefulWidget {
+  /// Creates a visual scaffold for Material Design widgets.
+  const Scaffold({
+    super.key,
+    this.appBar,
+    this.body,
+    this.floatingActionButton,
+    this.floatingActionButtonLocation,
+    this.floatingActionButtonAnimator,
+    this.persistentFooterButtons,
+    this.persistentFooterAlignment = AlignmentDirectional.centerEnd,
+    this.drawer,
+    this.onDrawerChanged,
+    this.endDrawer,
+    this.onEndDrawerChanged,
+    this.bottomNavigationBar,
+    this.bottomSheet,
+    this.backgroundColor,
+    this.resizeToAvoidBottomInset,
+    this.primary = true,
+    this.drawerDragStartBehavior = DragStartBehavior.start,
+    this.extendBody = false,
+    this.extendBodyBehindAppBar = false,
+    this.drawerScrimColor,
+    this.drawerEdgeDragWidth,
+    this.drawerEnableOpenDragGesture = true,
+    this.endDrawerEnableOpenDragGesture = true,
+    this.restorationId,
+  });
+}
+*/
