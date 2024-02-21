@@ -64,3 +64,23 @@ class MainApp extends StatelessWidget {
 ```
 
 
+│── .dart_tool/								- Flutter自动生成的配置和构建输出，一般不需要开发者去修改
+│── .idea/										- IDEA的配置信息，不用管
+├── android/                  - Android 原生项目文件夹
+├── build/                    - 存放构建产物的文件夹，不用管
+├── ios/                      - iOS 原生项目文件夹
+├── lib/                      - ⭐存放Flutter源代码，大部分开发会在这个目录下进行
+│   ├── main.dart             - ⭐Flutter 应用程序的主要入口
+├── linux/										- Linux平台相关代码及配置文件
+├── macos/										- Mac平台相关代码及配置文件
+├── test/											- 测试文件
+├── web/											- Web平台相关代码及配置文件
+├── windows/									- Windows平台相关代码及配置文件
+├── .metadata									- Dart编译器生成的元数据文件，包含有关项目的编译和依赖，metadata报错？报错直接删除让Dart重新编译
+├── analysis_options.yaml			- 配置静态代码分析工具，可在此定义代码风格、禁用和启用特定警告和错误检查
+├── hello_flutter.iml					- IntelliJ IDEA 项目文件文件，描述模块项目和依赖项，及其它配置信息，用于确保项目可以在 IntelliJ IDEA 或 Android Studio 中正确加载和编译。
+├── pubspec.lock							- 项目依赖项的锁定信息，由pubspec.yaml自动生成，用于确保项目在不同环境使用相同的依赖项版本
+└── pubspec.yaml              - ⭐ Flutter项目配置文件，包括依赖、插件、资源等
+
+上面图录解释来自与稀土掘金的博主：
+链接：https://juejin.cn/post/7301098227213139980
