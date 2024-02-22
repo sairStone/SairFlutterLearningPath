@@ -63,3 +63,44 @@ class MainApp extends StatelessWidget {
 }
 ```
 
+
+
+Flutter官网学习：https://flutter.cn/
+
+学习构建第一个Flutter应用：https://codelabs.developers.google.com/codelabs/flutter-codelab-first?hl=zh-cn#1
+
+```dart
+///main.dart 认识基础 Widget
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {           // ← 1
+    var appState = context.watch<MyAppState>();  // ← 2
+
+    return Scaffold(                             // ← 3
+      body: Column(                              // ← 4
+        children: [
+          Text('A random AWESOME idea:'),        // ← 5
+          Text(appState.current.asLowerCase),    // ← 6
+          ElevatedButton(
+            onPressed: () {
+              print('button pressed!');
+            },
+            child: Text('Next'),
+          ),
+        ],                                       // ← 7
+      ),
+    );
+  }
+}
+
+// ...
+```
+
+最后是 `MyHomePage`，这是您已经修改过的 widget。下面每个带编号的行均映射到上面代码中相应行编号的注释：
+
+1. 每个 widget 均定义了一个 `build()` 方法，每当 widget 的环境发生变化时，系统都会自动调用该方法，以便 widget 始终保持最新状态。
+2. `MyHomePage` 使用 `watch` 方法跟踪对应用当前状态的更改。
+3. 每个 `build` 方法都必须返回一个 widget 或（更常见的）嵌套 widget 树。在本例中，顶层 widget 是 `Scaffold`。
+4. `Column` 是 Flutter 中最基础的布局 widget 之一。它接受任意数量的子项并将这些子项从上到下放在一列中。默认情况下，该列会以可视化形式将其子项置于顶部。
+5. 您在第一步中更改了此 `Text` widget。
+6. 第二个 `Text` widget 接受 `appState`，并访问该类的唯一成员 `current`（这是一个 `WordPair`）。`WordPair` 提供了一些有用的 getter，例如 `asPascalCase` 或 `asSnakeCase`。此处，我们使用了 `asLowerCase`。但如果您希望选择其他选项，您现在可以对其进行更改。
