@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_idcardnew/componets/idcard.dart';
+import 'package:flutter_app_idcardnew/componets/quote_card.dart';
 import 'package:flutter_app_idcardnew/entity/card.dart';
+import 'package:flutter_app_idcardnew/entity/quote.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,25 +33,54 @@ class _HomePageState extends State<HomePage> {
     StuCard(avator: 'avator2.jpg', name: 'Fan', star: 2),
   ];
 
+  /// 同理
+  List<Quote> Quotes = [
+    Quote('这是平凡的一天啊', '毛不易'),
+    Quote('告白气球', '周杰伦'),
+    Quote('恭喜发财', '刘德华'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     /// 这是 有状态 State组件 Scaffold不用const
     return Scaffold(
-        backgroundColor: Colors.black54,
-        appBar: AppBar(
-          title: Text(
-            'Sair\'s IdCard',
-            style: TextStyle(color: Colors.white),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.grey[800],
+      backgroundColor: Colors.black54,
+      appBar: AppBar(
+        title: Text(
+          'Sair\'s IdCard',
+          style: TextStyle(color: Colors.white),
         ),
-        body: ListView.builder(
-          itemCount: stuCards.length,
-          itemBuilder: (BuildContext context, int index) {
-            return IdCard(stuCards[index]);
-          },
-        ));
+        centerTitle: true,
+        backgroundColor: Colors.grey[800],
+      ),
+      body: Container(
+        child: Column(
+          children: [
+             /// 这前面要加上 ...运算符来展开引用列表，将其作为Column子节点的一部分，否则出现问题。
+            ...Quotes.map((e) => QuoteCard(
+                  quote: e,
+                  delete: () {
+                    setState(() {
+                      Quotes.remove(e);
+                    });
+                  },
+                )).toList(),
+            ///使用了ListView.builder来创建一个可滚动的学生卡片列表
+            /// 此外，将ListView.builder直接放在了Column的子节点中，这可能会导致布局出现问题，所以需要Expanded( ),占据剩余空间，并且应该正确显示学生卡片列表
+            Expanded(
+              child: ListView.builder(
+                itemCount: stuCards.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return IdCard(stuCards[index]);
+                },
+              ),
+            ),
+
+
+          ],
+        ),
+      ),
+    );
   }
 }
 
