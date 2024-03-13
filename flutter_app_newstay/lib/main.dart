@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ChangeNotifierProvider作用是将一个 ChangeNotifier 对象提供给应用程序的整个组件树。
+    // 这意味着当 ChangeNotifier 对象发生变化时，所有依赖于它的 Widget 都会自动更新。方便地管理状态，避免手动传递状态和更新状态的繁琐工作
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
@@ -27,7 +29,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// ...
 // StatefulWidget此类扩展 State，因此可以管理其自己的值。
 class MyHomePage extends StatefulWidget {
   @override
