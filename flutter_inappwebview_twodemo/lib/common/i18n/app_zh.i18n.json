@@ -1,0 +1,18 @@
+{
+    "title": "湖南师范大学",
+    "ok": "确定",
+    "cancel":"取消",
+    "tab": {
+      "news": "新闻",
+      "message": "消息",
+      "app": "应用",
+      "profile": "我的"
+    },
+    "pullToRefresh": {
+      "idle": "下拉刷新",
+      "release": "松开刷新",
+      "refreshing": "正在请求数据...",
+      "complete": "刷新完成！",
+      "failed": "刷新失败！"
+    }
+  }

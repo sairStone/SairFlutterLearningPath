@@ -1,0 +1,8 @@
+[
+  {
+    "id": "login",
+    "version": 1.00,
+    "package": "assets://assets/applets/login.zip",
+    "describe": "https://appx.hunnu.edu.cn/storage/applets/login/index.json"
+  }
+]

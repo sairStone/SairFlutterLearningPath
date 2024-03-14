@@ -1,0 +1,18 @@
+{
+    "title": "Hunan Normal University",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "tab": {
+      "news": "News",
+      "message": "Message",
+      "app": "App",
+      "profile": "My"
+    },
+    "pullToRefresh": {
+      "idle": "Pull down Refresh",
+      "release": "Release to Refresh",
+      "refreshing": "Updating...",
+      "complete": "Refresh completed!",
+      "failed": "Refresh failed!"
+    }
+  }

@@ -10,12 +10,12 @@ ThemeData lightTheme() {
     // ignore: deprecated_member_use
     backgroundColor: Coloors.backgroundLight,
     scaffoldBackgroundColor: Coloors.backgroundLight,
-    primaryColor: Coloors.greenLight,
+    primaryColor: Coloors.majorTheme,
     extensions: [
       CustomThemeExtension.lightMode,
     ],
     appBarTheme: const AppBarTheme(
-      backgroundColor: Coloors.greenLight,
+      backgroundColor: Coloors.majorTheme,
       titleTextStyle: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
