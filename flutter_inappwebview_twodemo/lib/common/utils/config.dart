@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-
 class Config {
   // 设置map类型的动态返回内容，按照键值对
-  static Map _map = <String, dynamic>{};
+  static final Map _map = <String, dynamic>{};
 
   // putIfAbsent(key, ifAbsent)是map类型的方法，用来保存
   static int get windowGrids {

@@ -1,12 +1,19 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_inappwebview_twodemo/common/i18n/strings.g.dart';
 import 'package:flutter_inappwebview_twodemo/common/theme/dark_theme.dart';
 import 'package:flutter_inappwebview_twodemo/common/theme/light_theme.dart';
-import 'package:flutter_inappwebview_twodemo/home.dart';
+import 'package:flutter_inappwebview_twodemo/feature/frame/applet/pages/applet_assets_page.dart';
+import 'package:flutter_inappwebview_twodemo/feature/frame/applet/pages/applet_page.dart';
+import 'package:flutter_inappwebview_twodemo/feature/frame/applet/pages/applet_service_page.dart';
+import 'package:flutter_inappwebview_twodemo/splash.dart';
 import 'package:get/get.dart';
 
-void main() {
+
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   LocaleSettings.useDeviceLocale(); // 依赖于slang库（i18n），根据设备的系统设置自动选择合适的语言环境
 
   runApp(const MyApp());
@@ -24,7 +31,12 @@ class MyApp extends StatelessWidget {
       theme: lightTheme(),
       darkTheme: darkTheme(),
       themeMode: ThemeMode.system,
-      home: const Home(),
+      home:  FrameWidget(),
+      routes: {
+        '/applet': (context) => const AppletPage(),
+        '/applet/index': (context) => const AppletAssetsPage(),
+        '/applet/server': (context) => const AppletServicePage(),
+      },
     );
   }
 }
@@ -40,7 +52,7 @@ class _FrameWidgetState extends State<FrameWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Home()
+      body: SplashPage()
     );
   }
 }

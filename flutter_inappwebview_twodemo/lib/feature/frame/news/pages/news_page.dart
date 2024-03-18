@@ -105,7 +105,7 @@ class _NewsPageState extends State<NewsPage> {
                 key: webViewKey, // 在Widget外部引用这个InAppWebView组件，用来加载新页面
                 // 初始的url链接
                 initialUrlRequest:
-                    URLRequest(url: WebUri("https://www.hunnu.edu.cn/")),
+                    URLRequest(url: WebUri("https://www.baidu.com/")),
 
                 // 初始化的webview配置
                 initialSettings: settings,
